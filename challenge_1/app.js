@@ -17,32 +17,46 @@ Minimum Requirements
   //In each square, insert a div tag so we can add click event handlers later
 
 // Default, 3 x 3 board, later you can design more complicated boards
-var makeSquarez = function(row) {
-  makeRow(row);
-  makeColumn(8);
-  document.getElementById("test").appendChild(document.createElement('br'));
-  makeRow(row);
-  // let rowz = document.createTextNode(accRow.join(''));
-  // let columnz = document.createTextNode(accColumn.join('\n'));
-  // let element = document.getElementById("test");
-  // element.appendChild(rowz);
-  // element.appendChild(columnz);
-};
+// var makeSquarez = function(id) {
+//   makeBorderz(id);
+//   makeGridz(id);
+//   document.getElementById(id).appendChild(document.createElement('br'));
+//   makeBorderz(id);
+//   // let rowz = document.createTextNode(accRow.join(''));
+//   // let columnz = document.createTextNode(accColumn.join('\n'));
+//   // let element = document.getElementById("test");
+//   // element.appendChild(rowz);
+//   // element.appendChild(columnz);
+// };
 
-var makeRow = function(num) {
-  for (var i = 0; i <= num; i++) {
-    let asciiz = document.createTextNode('#');
-    document.getElementById("test").appendChild(asciiz);
-  }
-};
+// var makeBorderz = function(id) {
+//   for (var i = 0; i <= 18; i++) {
+//     let asciiz = document.createTextNode('#');
+//     document.getElementById(id).appendChild(asciiz);
+//   }
+// };
 
-var makeColumn = function(num) {
-  for (var i = 0; i <= num; i++) {
-    let asciiz = document.createTextNode('#~~~~~~~~~~~~~~~~#');
-    document.getElementById("test").appendChild(document.createElement('br'));
-    document.getElementById("test").appendChild(asciiz);
-  }
-};
+// var makeGridz = function(id) {
+//   for (var i = 0; i <= 8; i++) {
+//     let asciiz = document.createTextNode('#~~~~~~~~~~~~~~~~#');
+//     document.getElementById(id).appendChild(document.createElement('br'));
+//     document.getElementById(id).appendChild(asciiz);
+//   }
+// };
 
-makeSquarez(18);
+// makeSquarez('A1');
+// makeSquarez('B1');
+
+document.getElementById('A1').addEventListener('click', function(event) {
+  console.log('You clicked here!');
+  let xPiece = document.createElement('img');
+  xPiece.src = 'tic-tac-toe-X.png';
+  xPiece.setAttribute('id', 'x');
+  xPiece.setAttribute('alt', 'tic-tac-toe-X');
+  xPiece.setAttribute('width', '100');
+  xPiece.setAttribute('height', '100');
+  document.getElementById('A1').appendChild(xPiece);
+  //debugger;
+});
+
 
