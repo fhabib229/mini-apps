@@ -1,0 +1,38 @@
+{
+  "name": "challenge3",
+  "version": "1.0.0",
+  "description": "package-json file for mini app 3",
+  "main": "app.js",
+  "scripts": {
+    "test": "'no tests this time'",
+    "watch": "babel client --out-dir public --presets=env,react --source-maps inline --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhabib229/rpt10-mini-apps.git"
+  },
+  "keywords": [
+    "hr",
+    "rpt10"
+  ],
+  "author": "Faris Habib",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fhabib229/rpt10-mini-apps/issues"
+  },
+  "homepage": "https://github.com/fhabib229/rpt10-mini-apps#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.6",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
