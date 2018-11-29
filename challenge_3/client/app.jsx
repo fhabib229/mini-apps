@@ -1,3 +1,9 @@
+function Checkout() {
+  return (
+     <button type="button">Checkout HERE FOOL</button>
+  );
+}
+
 class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -46,4 +52,149 @@ class PersonalInfo extends React.Component {
   }
 }
 
-ReactDOM.render(<PersonalInfo/>, document.getElementById('form1'));
+class LocationInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address1: '',
+      address2: '',
+      city: '',
+      unitedState: '',
+      zip: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name] : event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    alert('address1 is: ' + this.state.address1 + '\naddress2 is: ' + this.state.address2 + '\ncity is ' + this.state.city + '\nstate is ' + this.state.unitedState + '\nzip is ' + this.state.zip);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Address line 1:
+          <input name="address1" type="text" value={this.state.address1} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+          Address line 2:
+          <input name="address2" type="text" value={this.state.address2} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+          City:
+          <input name="city" type="text" value={this.state.city} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+        State:
+          <input name="unitedState" type="text" value={this.state.unitedState} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+        Zip Code:
+          <input name="zip" type="text" value={this.state.zip} onChange={this.handleChange} />
+        </label>
+        <br />
+        <input type="submit" value="Next" />
+      </form>
+    );
+  }
+}
+
+class PurchaseInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardNumber: '',
+      expirationDate: '',
+      cvv: '',
+      billingZip: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name] : event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    console.log('cardNumber: ', this.state.cardNumber, '\nexpirationDate: ', this.state.expirationDate, '\ncvv: ', this.state.cvv, '\nbillingZip', this.state.billingZip);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Credit Card Number:
+          <input name="cardNumber" type="text" value={this.state.cardNumber} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+          Expiration Date:
+          <input name="expirationDate" type="text" value={this.state.expirationDate} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+          CVV:
+          <input name="cvv" type="text" value={this.state.cvv} onChange={this.handleChange} />
+        </label>
+        <br />
+        <label>
+          Billing Zip Code:
+          <input name="billingZip" type="text" value={this.state.billingZip} onChange={this.handleChange} />
+        </label>
+        <br />
+        <input type="submit" value="Next" />
+      </form>
+    );
+  }
+}
+
+class Summary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Pass in all form data
+    }
+  }
+
+  render() {
+    return (
+
+    );
+  }
+}
+
+// Create a summary page
+  //Pass each form data into summary component at each form component
+// Start from checkout, and link each form as a next page
+
+function App() {
+  return (
+    <div>
+      <Checkout />
+      <PersonalInfo />
+      <LocationInfo />
+      <PurchaseInfo />
+      {/* <Summary /> */}
+    </div>
+  );
+}
+
+ReactDOM.render(<App/>, document.getElementById('checkout'));

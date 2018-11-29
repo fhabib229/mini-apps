@@ -2,7 +2,7 @@
   "name": "challenge3",
   "version": "1.0.0",
   "description": "package-json file for mini app 3",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "'no tests this time'",
     "watch": "babel client --out-dir public --presets=env,react --source-maps inline --watch"
