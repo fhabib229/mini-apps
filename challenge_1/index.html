@@ -1,38 +1,53 @@
 <! DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
 
-<body>
-  <h1>Tic Tac Toe</h1>
-  <h3>Get 3 in a row!</h3>
-  <h4>Player 1 moves first</h4>
-  <h5>Player 1: X</h5>
-  <h5>Player 2: O</h5>
-  <button type="button">Reset Game</button>
-  <!-- <img src="tic-tac-toe-board.gif" alt="tic-tac-toe-board" style="width: 500px; height: 500px;"> -->
-  <img src="tic-tac-toe-O.png" id="o" alt="tic-tac-toe-O" style="width: 100px; height: 100px;">
-  <img src="tic-tac-toe-X.png" id="x" alt="tic-tac-toe-X" style="width: 100px; height: 100px;">
-  <div id="board">
-    <div>
-        <span id="A1">
-            <img src="square.png" style="width: 300px; height: 300px;">
-          </span>
-          <span id="B1">
-            <img src="square.png" style="width: 300px; height: 300px;">
-          </span>
-          <span id="C1">
-            <img src="square.png" style="width: 300px; height: 300px;">
-          </span>
-    </div>
-    <span id="A2"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <span id="B2"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <span id="C2"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <br>
-    <span id="A3"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <span id="B3"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <span id="C3"><img src="square.png" style="width: 300px; height: 300px;"></span>
-    <br>
+<body style="text-align:center">
+  <div id="top-info">
+    <h1>Tic Tac Toe</h1>
+    <h3>Get 3 in a row!</h3>
+      <h3 class="playerX" style="display: inline; margin: 5em">Player X</h3>
+      <h3 class="playerO" style="display: inline; margin: 5em">Player O</h3>
   </div>
-  <script src="app.js"></script>
-</body>
-</html>
 
+  <br>
+  <br>
+  <div id="board">
+  <table class="board" style="margin-left: auto; margin-right: auto; border-collapse: collapse;">
+    <tbody style="text-align: center">
+      <tr>
+        <td class="col-1 diag-1 row-1" style="border-right: 5px solid lightgreen; border-bottom: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-2 row-1" style="border-right: 5px solid lightgreen; border-bottom: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-3 diag-2 row-1" style="border-bottom: 5px solid lightgreen;"></td>
+      </tr>
+      <tr>
+        <td class="col-1 row-2" style="border-right: 5px solid lightgreen; border-bottom: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-2 diag-1 diag-2 row-2" style="border-right: 5px solid lightgreen; border-bottom: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-3 row-2" style="border-bottom: 5px solid lightgreen; width: 75; height: 75;"></td>
+      </tr>
+      <tr>
+        <td class="col-1 diag-2 row-3" style="border-right: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-2 row-3" style="border-right: 5px solid lightgreen; width: 75; height: 75;"></td>
+        <td class="col-3 diag-1 row-3"></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <br>
+  <br>
+
+  <div>
+    <div class="messages" style='display: block; margin-bottom: 50px;'></div>
+
+    <p id="refresh" class="refresh"></p>
+  </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>
