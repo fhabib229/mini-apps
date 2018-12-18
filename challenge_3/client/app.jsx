@@ -43,22 +43,22 @@ class PurchaseInfo extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Credit Card Number:
-          <input name="cardNumber" type="text" value={this.state.cardNumber} onChange={this.handleChange} />
+          <input name="cardNumber" type="number" value={this.state.cardNumber} onChange={this.handleChange} />
         </label>
         <br />
         <label>
           Expiration Date:
-          <input name="expirationDate" type="text" value={this.state.expirationDate} onChange={this.handleChange} />
+          <input name="expirationDate" type="number" value={this.state.expirationDate} onChange={this.handleChange} />
         </label>
         <br />
         <label>
           CVV:
-          <input name="cvv" type="text" value={this.state.cvv} onChange={this.handleChange} />
+          <input name="cvv" type="number" value={this.state.cvv} onChange={this.handleChange} />
         </label>
         <br />
         <label>
           Billing Zip Code:
-          <input name="billingZip" type="text" value={this.state.billingZip} onChange={this.handleChange} />
+          <input name="billingZip" type="number" value={this.state.billingZip} onChange={this.handleChange} />
         </label>
         <br />
         <input type="submit" value="Next" />
@@ -120,7 +120,7 @@ class LocationInfo extends React.Component {
         <br />
         <label>
         Zip Code:
-          <input name="zip" type="text" value={this.state.zip} onChange={this.handleChange} />
+          <input name="zip" type="number" value={this.state.zip} onChange={this.handleChange} />
         </label>
         <br />
         <input type="submit" value="Next" onClick={this.handleSubmit}/>
@@ -152,7 +152,11 @@ class PersonalInfo extends React.Component {
     console.log('Name is: ' + this.state.name + '\nemail is: ' + this.state.email + '\npassword is ' + this.state.password);
     event.preventDefault();
     ReactDOM.render(<LocationInfo />, document.getElementById('checkout'))
-    //Insert records into the database.
+    let options = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    }
   }
 
   render() {
@@ -170,7 +174,7 @@ class PersonalInfo extends React.Component {
         <br />
         <label>
           Password:
-          <input name="password" type="text" value={this.state.password} onChange={this.handleChange} />
+          <input name="password" type="password" value={this.state.password} onChange={this.handleChange} />
         </label>
         <br />
         <input type="submit" value="Next" onClick={this.handleSubmit} />
