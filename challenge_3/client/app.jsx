@@ -1,6 +1,13 @@
 var Summary = (props) => {
+  function handleSubmit(e) {
+    e.preventDefault();
+    ReactDOM.render(<Checkout />, document.getElementById('checkout'))
+  }
   return (
-    <div>Summary Here</div>
+    <div>
+      Summary Here
+    <button type="button" onClick={handleSubmit}>Purchase</button>
+    </div>
   );
 }
 
@@ -82,7 +89,7 @@ class LocationInfo extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('address1 is: ' + this.state.address1 + '\naddress2 is: ' + this.state.address2 + '\ncity is ' + this.state.city + '\nstate is ' + this.state.unitedState + '\nzip is ' + this.state.zip);
+    console.log('address1 is: ' + this.state.address1 + '\naddress2 is: ' + this.state.address2 + '\ncity is ' + this.state.city + '\nstate is ' + this.state.unitedState + '\nzip is ' + this.state.zip);
     event.preventDefault();
     ReactDOM.render(<PurchaseInfo />, document.getElementById('checkout'))
     //insert records into database
@@ -142,7 +149,7 @@ class PersonalInfo extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Name is: ' + this.state.name + '\nemail is: ' + this.state.email + '\npassword is ' + this.state.password);
+    console.log('Name is: ' + this.state.name + '\nemail is: ' + this.state.email + '\npassword is ' + this.state.password);
     event.preventDefault();
     ReactDOM.render(<LocationInfo />, document.getElementById('checkout'))
     //Insert records into the database.
@@ -179,7 +186,7 @@ function Checkout() {
     ReactDOM.render(<PersonalInfo />, document.getElementById('checkout'))
   }
   return (
-    <button type="button" onClick={handleSubmit}>Checkout HERE FOOL</button>
+    <button type="button" onClick={handleSubmit}>Checkout</button>
   );
 }
 
